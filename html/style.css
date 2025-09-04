@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: transparent; /* no background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Press Start 2P', cursive;
+  overflow: hidden;
+}
+
+#bubble-container {
+  position: relative;
+  width: 80vw;
+  height: 80vh;
+  background: transparent; /* no background */
+  border: none;
+  box-shadow: none;
+  overflow: visible;
+}
+
+/* Bubble styling */
+.bubble {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(145deg, #8a2be2, #6a1b9a); /* purple gradient */
+  border: 3px solid #4b0082; /* dark purple border */
+  border-radius: 15px;
+  color: #e0ccff;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 60px;
+  user-select: none;
+  cursor: pointer;
+  
+  /* Pixel style shadows */
+  box-shadow:
+    3px 3px 0 #4b0082,
+    inset 2px 2px 0 #b399ff,
+    inset -2px -2px 0 #4b0082;
+  
+  /* Pixel glow */
+  filter: drop-shadow(0 0 4px #9b59b6);
+  
+  transition: transform 0.2s ease;
+}
+
+.bubble:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px #d29fff);
+}
+
+/* Floating and rotation animation */
+@keyframes float-rotate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.float-rotate {
+  animation: float-rotate 3s ease-in-out infinite;
+}
