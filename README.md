@@ -5,6 +5,8 @@ You can start the minigame directly or integrate it with other scripts.
 
 ---
 
+Framework : Qbcore/Qbox
+
 ## Usage
 
 ### From Client Scripts
